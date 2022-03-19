@@ -12,7 +12,7 @@
 	<artifactId>chartographerapp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>chartographerapp</name>
-	<description>Task for SBK Kontur Intership</description>
+	<description>Task for SKB Kontur Intership</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
