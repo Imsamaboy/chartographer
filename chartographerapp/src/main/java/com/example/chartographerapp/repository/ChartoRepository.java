@@ -13,8 +13,6 @@ import java.util.Optional;
 public interface ChartoRepository extends CrudRepository<Charta, Integer> {
     List<Charta> findChartaById(Integer id);
 
-//    List<Charta> findChartaById(Integer id);
-
     Optional<Charta> getChartaById(Integer id);
 
     @Query("select max(id) from Charta")

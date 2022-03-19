@@ -69,12 +69,10 @@ public class ChartographerServiceImpl implements ChartographerService {
 
     @Override
     public String createCharta(Integer width, Integer height) throws IOException {
-//        // Переписать логику с path
-//        String path = "/home/sfelshtyn/Documents/chartographerapp/src/main/resources/static";
         // Находим следующий айдишник для новой харты
         Integer id = chartoRepository.findCurrentChartaId().map(integer -> integer + 1).orElse(1);
         // Создаём харту и сохраняем её
-        Charta charta = new Charta(id, width, height, null);    // path + "/" + id
+        Charta charta = new Charta(id, width, height, null);
         chartoRepository.save(charta);
 
         // Создаём лист фрагментов под новую харту
@@ -210,8 +208,3 @@ public class ChartographerServiceImpl implements ChartographerService {
     }
 
 }
-
-//                        int startX = Math.max(x, fragment.getX());
-//                        int startY = Math.max(y, fragment.getY());
-//                        int endX = Math.min(x + width, fragment.getX() + fragment.getWidth());
-//                        int endY = Math.min(y + height, fragment.getY() + fragment.getHeight());

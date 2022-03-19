@@ -148,7 +148,7 @@ public class ChartoGrapherApiControllerTest {
                 new FragmentModel("190", "190", "10", "10"),
                 new FragmentModel("100", "190", "10", "10")
         );
-
+        // Тестовый кейсы на 70x70px
         List<FragmentModel> fragmentsWith70 = List.of(
                 new FragmentModel("0", "0", "70", "70"),
                 new FragmentModel("199", "199", "70", "70"),
@@ -160,7 +160,7 @@ public class ChartoGrapherApiControllerTest {
                 new FragmentModel("190", "190", "70", "10"),
                 new FragmentModel("100", "190", "10", "70")
         );
-
+        // Тестовый кейсы на 200x200px
         List<FragmentModel> fragmentsWith200 = List.of(
                 new FragmentModel("0", "0", "200", "200")
         );
