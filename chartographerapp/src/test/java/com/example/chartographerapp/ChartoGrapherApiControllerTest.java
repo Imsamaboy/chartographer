@@ -34,14 +34,12 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
-//@WebMvcTest(controllers = ChartoGrapherApiController.class)
 @AutoConfigureMockMvc(addFilters = false)
 public class ChartoGrapherApiControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
     @Autowired
-//    @MockBean
     private ChartoGrapherApiController chartoGrapherApiController;
 
     @Autowired
@@ -64,11 +62,6 @@ public class ChartoGrapherApiControllerTest {
 
         List<String> ids = new ArrayList<>();
         for (String width: widthAndHeightValues.keySet()) {
-
-//            when(chartoGrapherApiController.createCharta(Integer.valueOf(width),
-//                    Integer.valueOf(widthAndHeightValues.get(width))))
-//                    .thenReturn(new ResponseEntity<>(HttpStatus.CREATED));
-
             ids.add(this.mockMvc.perform(
                     post("/chartas")
                     .param("width", width)
@@ -79,9 +72,6 @@ public class ChartoGrapherApiControllerTest {
                     .andReturn()
                     .getResponse()
                     .getContentAsString());
-
-//            verify(chartoGrapherApiController).createCharta(Integer.valueOf(width),
-//                    Integer.valueOf(widthAndHeightValues.get(width)));
         }
 
         ids.stream()
@@ -213,9 +203,6 @@ public class ChartoGrapherApiControllerTest {
 
         // Тестовый кейсы
         List<FragmentModel> fragmentsWithBadParams = List.of(
-                new FragmentModel("-1", "50", "50", "50"),
-                new FragmentModel("50", "-1", "50", "50"),
-                new FragmentModel("-1", "-1", "50", "50"),
                 new FragmentModel("200", "200", "50", "50"),
                 new FragmentModel("0", "200", "50", "50"),
                 new FragmentModel("200", "0", "50", "50"),
@@ -300,9 +287,6 @@ public class ChartoGrapherApiControllerTest {
 
         // Тестовый кейсы
         List<FragmentModel> fragmentsWithBadParams = List.of(
-                new FragmentModel("-1", "0", "50", "50"),
-                new FragmentModel("0", "-1", "50", "50"),
-                new FragmentModel("-1", "-1", "50", "50"),
                 new FragmentModel("200", "200", "50", "50"),
                 new FragmentModel("500", "500", "50", "50"),
                 new FragmentModel("150", "500", "50", "50"),
