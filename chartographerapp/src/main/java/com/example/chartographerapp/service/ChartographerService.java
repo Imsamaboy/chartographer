@@ -66,7 +66,11 @@ public class ChartographerService {
         Charta charta = chartoRepository.getChartaById(id).orElseThrow(() -> new ChartaNotFoundException(id));
         List<Fragment> fragmentsByCharta = fragmentRepository.findFragmentByCharta(charta);
         for (Fragment fragment: fragmentsByCharta) {
-            log.error(new File(fragment.getFileName()).delete() ? "Файл удалён" : "Файл не найден");
+            if (new File(fragment.getFileName()).delete()) {
+                log.info(String.format("%s удалён", fragment.getFileName()));
+            } else {
+                log.error(String.format("%s не удалён", fragment.getFileName()));
+            }
             fragmentRepository.delete(fragment);
         }
         chartoRepository.delete(charta);

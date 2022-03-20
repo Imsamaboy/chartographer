@@ -9,8 +9,8 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>chartographerapp</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>chartographer</artifactId>
+	<version>0.0.1</version>
 	<name>chartographerapp</name>
 	<description>Task for SKB Kontur Intership</description>
 	<properties>
